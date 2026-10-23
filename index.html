@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>จเด็ด เครือแสง · E-Portfolio ครูคอมพิวเตอร์</title>
+<meta name="description" content="E-Portfolio นายจเด็ด เครือแสง ครูคอมพิวเตอร์ ผู้ช่วยนักวิจัย และผู้พัฒนาระบบสารสนเทศเพื่อการศึกษา">
+<meta name="theme-color" content="#111A3A">
+<meta property="og:title" content="จเด็ด เครือแสง · E-Portfolio ครูคอมพิวเตอร์">
+<meta property="og:description" content="สอนได้ · สร้างระบบได้ · ถ่ายทอดได้ — ผู้ช่วยนักวิจัยและผู้พัฒนาระบบการศึกษาที่ใช้งานจริง">
+<meta property="og:image" content="assets/hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@500;600;700&family=Sarabun:wght@400;500;600&display=swap">
+<style>
+/* E-Portfolio v3 · ธีมเดียวกับประวัติย่อ/แผ่นพับ v3 (กรมท่า + ทอง + สี 3 บทบาท)
+   mobile-first: ฐานคือจอมือถือ ~360–430px แล้วขยายที่ 768px (แท็บเล็ต) และ 1100px (เดสก์ท็อป)
+   ภาพทุกภาพแสดงเต็มสัดส่วน ไม่ใช้ object-fit:cover */
+:root{
+  --navy:#111A3A; --navy-2:#1A2550; --navy-3:#24316A;
+  --ink:#141824; --ink-2:#3E4556; --mute:#6E7586; --line:#E2E4EA; --paper:#fff; --cream:#F6F4EF;
+  --teach:#2F6BFF; --build:#10A88F; --share:#F28A2E; --gold:#F5C04E;
+  --teach-l:#8DB0FF; --build-l:#5FE0C8; --share-l:#FFB370;
+  --f-head:"Bai Jamjuree",system-ui,sans-serif; --f-body:"Sarabun",system-ui,sans-serif;
+  --gut:max(18px,env(safe-area-inset-left,0px));
+  --gut-r:max(18px,env(safe-area-inset-right,0px));
+  --r:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--f-body);color:var(--ink);background:var(--paper);font-size:16px;line-height:1.65;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3,h4{font-family:var(--f-head);margin:0;line-height:1.2;text-wrap:balance}
+p{margin:0}
+ul{margin:0;padding-left:1.15em}
+.wrap{max-width:1180px;margin:0 auto;padding-left:var(--gut);padding-right:var(--gut-r)}
+.t-teach{color:var(--teach)}.t-build{color:var(--build)}.t-share{color:var(--share)}
+.label{font-family:var(--f-head);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+svg.ic{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:50;background:rgba(17,26,58,.86);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);padding-top:env(safe-area-inset-top,0px)}
+.nav .wrap{display:flex;align-items:center;gap:12px;height:54px}
+.logo{font-family:var(--f-head);font-weight:700;color:#fff;text-decoration:none;font-size:17px;letter-spacing:.04em;display:flex;align-items:center;gap:8px;flex:none}
+.logo i{display:inline-flex;width:24px;height:24px;border-radius:7px;background:conic-gradient(var(--teach) 0 33%,var(--build) 0 66%,var(--share) 0);box-shadow:inset 0 0 0 5px var(--navy)}
+.menu{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin-left:auto;mask-image:linear-gradient(90deg,transparent,#000 12px,#000 calc(100% - 12px),transparent)}
+.menu::-webkit-scrollbar{display:none}
+.menu a{font-family:var(--f-head);font-size:14px;font-weight:500;color:rgba(255,255,255,.78);text-decoration:none;padding:8px 11px;border-radius:99px;white-space:nowrap}
+.menu a.on,.menu a:hover{background:rgba(255,255,255,.12);color:#fff}
+
+/* ---------- hero ---------- */
+.hero{position:relative;background:radial-gradient(120% 80% at 80% 0%,var(--navy-3) 0%,var(--navy) 55%);color:#fff;overflow:hidden;isolation:isolate}
+#bg3d{position:absolute;inset:0;width:100%;height:100%;z-index:-1;opacity:.95}
+.hero .wrap{display:grid;gap:30px;padding-top:34px;padding-bottom:46px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{font-family:var(--f-head);font-size:13px;font-weight:500;border:1px solid rgba(255,255,255,.28);border-radius:99px;padding:3px 12px;color:rgba(255,255,255,.88);background:rgba(255,255,255,.04)}
+.chip.gold{background:var(--gold);color:var(--navy);border-color:var(--gold);font-weight:700}
+.hero h1{font-size:clamp(40px,11vw,76px);font-weight:700;line-height:1.02;margin-top:14px;letter-spacing:-.01em}
+.hero .en{font-family:var(--f-head);font-size:13px;letter-spacing:.22em;color:rgba(255,255,255,.55);margin-top:8px}
+.hero .tag{font-family:var(--f-head);font-size:clamp(20px,5.4vw,28px);font-weight:600;margin-top:16px;line-height:1.35}
+.hero .tag .a{color:var(--teach-l)}.hero .tag .b{color:var(--build-l)}.hero .tag .c{color:var(--share-l)}
+.hero .intro{color:rgba(255,255,255,.78);margin-top:12px;max-width:34em;font-size:16px}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.btn{font-family:var(--f-head);font-weight:600;font-size:15px;text-decoration:none;padding:11px 18px;border-radius:12px;display:inline-flex;align-items:center;gap:8px;min-height:44px}
+.btn.pri{background:var(--gold);color:var(--navy)}
+.btn.sec{border:1px solid rgba(255,255,255,.3);color:#fff}
+
+.stage3d{position:relative;perspective:1100px;justify-self:center;width:min(78vw,360px);margin:6px 0 10px}
+.card3d{position:relative;transform-style:preserve-3d;transition:transform .5s cubic-bezier(.2,.7,.2,1);animation:float 7s ease-in-out infinite}
+.card3d .frame{position:absolute;inset:0;transform:translate3d(16px,16px,-40px);border:3px solid var(--gold);border-radius:14px}
+.card3d img{border-radius:14px;box-shadow:0 30px 60px rgba(0,0,0,.45);transform:translateZ(0)}
+.badge{position:absolute;width:74px;height:74px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;border:3px solid #fff;box-shadow:0 14px 30px rgba(0,0,0,.35);font-family:var(--f-head)}
+.badge b{font-size:18px;line-height:1}
+.badge span{font-size:9.5px;line-height:1.15;margin-top:3px;font-weight:500}
+.bd1{right:-14px;top:9%;background:var(--build);transform:translateZ(70px)}
+.bd2{right:-18px;top:39%;background:var(--share);transform:translateZ(110px)}
+.bd3{right:-12px;top:69%;background:var(--teach);transform:translateZ(85px)}
+@keyframes float{0%,100%{translate:0 0}50%{translate:0 -10px}}
+
+.scroll-hint{position:absolute;left:50%;bottom:10px;translate:-50% 0;font-family:var(--f-head);font-size:12px;color:rgba(255,255,255,.5);letter-spacing:.14em}
+
+/* ---------- year band ---------- */
+.year{background:var(--navy-2);color:#fff}
+.year .wrap{padding-top:22px;padding-bottom:24px}
+.year h2{font-size:15px;font-weight:600;color:var(--gold);letter-spacing:.06em}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:16px 14px;margin-top:14px}
+.stat b{display:block;font-family:var(--f-head);font-size:34px;font-weight:700;line-height:1}
+.stat span{display:block;font-size:13.5px;color:rgba(255,255,255,.7);line-height:1.35;margin-top:5px}
+.stat:nth-child(1) b{color:var(--build-l)}.stat:nth-child(2) b{color:var(--teach-l)}.stat:nth-child(3) b{color:var(--share-l)}.stat:nth-child(4) b{color:var(--gold)}
+
+/* ---------- sections ---------- */
+section.sec{padding:56px 0}
+section.sec.alt{background:var(--cream)}
+.sec-head{display:grid;gap:8px;margin-bottom:26px}
+.sec-head .num{font-family:var(--f-head);font-weight:700;font-size:15px;display:flex;align-items:center;gap:8px}
+.sec-head h2{font-size:clamp(28px,7.4vw,44px);font-weight:700;letter-spacing:-.01em}
+.sec-head p{color:var(--ink-2);max-width:40em;font-size:16.5px}
+.kicker{display:inline-flex;align-items:center;gap:7px;font-family:var(--f-head);font-size:13px;font-weight:600;background:var(--navy);color:var(--gold);border-radius:99px;padding:4px 12px;width:max-content}
+
+/* research cards */
+.proj{display:grid;gap:22px}
+.pj{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(17,26,58,.06)}
+.pj .top{padding:20px 20px 4px;display:grid;gap:10px}
+.pj .role{font-family:var(--f-head);font-size:13px;font-weight:600;color:#fff;background:var(--build);border-radius:99px;padding:3px 11px;width:max-content}
+.pj.main .role{background:var(--navy)}
+.pj h3{font-size:clamp(21px,5.6vw,27px);font-weight:700}
+.pj .meta{font-size:14px;color:var(--mute)}
+.pj .body{padding:6px 20px 20px;display:grid;gap:14px}
+.pj .body p{color:var(--ink-2)}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.facts div{background:var(--cream);border-radius:12px;padding:10px 12px}
+.facts b{display:block;font-family:var(--f-head);font-size:22px;font-weight:700;color:var(--navy);line-height:1.1}
+.facts span{font-size:13px;color:var(--mute);line-height:1.3;display:block;margin-top:2px}
+.did{display:grid;gap:7px;padding:0;list-style:none}
+.did li{display:grid;grid-template-columns:22px 1fr;gap:8px;line-height:1.5;font-size:15.5px}
+.did li::before{content:"";width:9px;height:9px;border-radius:3px;background:var(--gold);margin-top:8px;margin-left:5px;transform:rotate(45deg)}
+.pj .shots{padding:0 20px 20px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span{font-family:var(--f-head);font-size:12.5px;background:#EEF1F7;color:var(--navy-2);border-radius:99px;padding:2px 10px}
+
+/* horizontal scroller (mobile swipe) */
+.rail{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:4px 2px 12px;scrollbar-width:thin}
+.rail > *{scroll-snap-align:start;flex:none;width:82%}
+.rail figure{margin:0}
+.rail figcaption{font-size:13px;color:var(--mute);margin-top:6px;line-height:1.35}
+.rail img{border-radius:12px;cursor:zoom-in}
+
+/* browser window */
+.win{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 18px 40px rgba(17,26,58,.18),0 0 0 1px rgba(17,26,58,.06)}
+.win .bar{height:26px;background:#EEF0F4;display:flex;align-items:center;gap:6px;padding:0 10px}
+.win .bar i{width:9px;height:9px;border-radius:50%}
+.win .bar i:nth-child(1){background:#FF6159}.win .bar i:nth-child(2){background:#FFBD2E}.win .bar i:nth-child(3){background:#28C941}
+.win .bar span{margin-left:8px;font-family:var(--f-head);font-size:11.5px;color:var(--mute);background:#fff;border-radius:99px;padding:0 12px;line-height:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.win img{cursor:zoom-in}
+
+/* featured system */
+.feature{display:grid;gap:22px;align-items:center}
+.persp{perspective:1400px}
+.tilt{transform-style:preserve-3d;transition:transform .6s cubic-bezier(.2,.7,.2,1);will-change:transform}
+.stack{position:relative;padding-bottom:16%}
+.stack .back{position:absolute;width:74%;right:0;bottom:0;transform:translateZ(-60px) rotate(2.5deg)}
+.stack .front{position:relative;width:88%;transform:translateZ(30px)}
+.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.kpis div{border-left:3px solid var(--build);padding:2px 0 2px 12px}
+.kpis b{display:block;font-family:var(--f-head);font-size:26px;font-weight:700;color:var(--build);line-height:1.1}
+.kpis span{font-size:13.5px;color:var(--mute);line-height:1.3;display:block}
+.links a{font-family:var(--f-head);font-weight:600;color:var(--build);text-decoration:none;border-bottom:2px solid currentColor}
+
+.sysgrid{display:grid;gap:18px;margin-top:34px}
+.sys{display:grid;gap:10px}
+.sys h4{font-size:18px;font-weight:700;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.sys h4 small{font-family:var(--f-head);font-size:11.5px;font-weight:600;color:#fff;background:var(--build);border-radius:99px;padding:1px 9px}
+.sys p{font-size:15px;color:var(--ink-2);line-height:1.55}
+.sys a.go{font-family:var(--f-head);font-size:14px;font-weight:600;color:var(--build);text-decoration:none}
+.stackbar{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px;align-items:center}
+.stackbar .label{color:var(--mute);margin-right:4px}
+.stackbar span:not(.label){font-family:var(--f-head);font-size:13.5px;font-weight:600;border:1.5px solid var(--navy);border-radius:10px;padding:4px 11px;color:var(--navy)}
+
+/* teach / share */
+.two{display:grid;gap:26px}
+.rows{display:grid;gap:12px}
+.row{display:grid;grid-template-columns:78px 1fr;gap:12px;font-size:15.5px;line-height:1.5}
+.row .k{font-family:var(--f-head);font-weight:600;font-size:14px}
+.prints{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;padding:6px 4px}
+.print{background:#fff;padding:7px 7px 26px;border-radius:3px;box-shadow:0 8px 22px rgba(17,26,58,.18);margin:0;position:relative}
+.print:nth-child(odd){rotate:-2deg}.print:nth-child(even){rotate:2deg}
+.print img{cursor:zoom-in}
+.print figcaption{position:absolute;left:8px;right:8px;bottom:5px;font-family:var(--f-head);font-size:11.5px;color:var(--ink-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.print .tape{position:absolute;top:-9px;left:50%;width:56px;height:18px;background:rgba(245,192,78,.8);translate:-50% 0;rotate:-4deg}
+.callout{background:var(--navy);color:#fff;border-radius:18px;padding:18px 20px;display:grid;gap:4px}
+.callout b{font-family:var(--f-head);font-size:34px;font-weight:700;color:var(--share-l);line-height:1}
+.callout span{color:rgba(255,255,255,.75);font-size:14.5px}
+
+/* leadership */
+.lead{display:grid;gap:12px}
+.lead div{background:#fff;border-radius:14px;padding:14px 16px;border-left:5px solid var(--gold);box-shadow:0 6px 18px rgba(17,26,58,.05)}
+.lead b{display:block;font-family:var(--f-head);font-size:17px}
+.lead span{font-size:14.5px;color:var(--mute)}
+
+/* gallery ring */
+.ringwrap{perspective:1200px;height:clamp(230px,62vw,380px);display:grid;place-items:center;margin-top:10px;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.ring{position:relative;width:clamp(200px,52vw,330px);transform-style:preserve-3d}
+.ring figure{position:absolute;left:0;top:50%;width:100%;margin:0;translate:0 -50%;backface-visibility:hidden}
+.ring img{border-radius:10px;box-shadow:0 18px 40px rgba(0,0,0,.3);border:5px solid #fff;cursor:zoom-in}
+.ringctl{display:flex;justify-content:center;gap:10px;margin-top:8px}
+.ringctl button{font:600 15px var(--f-head);width:46px;height:46px;border-radius:50%;border:1.5px solid var(--navy);background:#fff;color:var(--navy);cursor:pointer}
+
+/* plan + edu */
+.plan{background:var(--navy);color:#fff}
+.plan .grid{display:grid;gap:14px}
+.plan .it{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:16px 18px}
+.plan .n{font-family:var(--f-head);font-weight:700;font-size:26px;line-height:1}
+.plan .it b{display:block;font-family:var(--f-head);font-size:18px;margin:8px 0 4px}
+.plan .it span{color:rgba(255,255,255,.75);font-size:15px}
+.plan .sec-head h2{color:#fff}.plan .sec-head p{color:rgba(255,255,255,.75)}
+.edu{display:grid;gap:12px}
+.edu div{border-top:2px solid var(--navy);padding-top:10px}
+.edu b{display:block;font-family:var(--f-head);font-size:24px;font-weight:700;line-height:1.15}
+.edu span{color:var(--mute);font-size:14.5px}
+
+footer{background:#0B1230;color:rgba(255,255,255,.7);padding:36px 0 calc(28px + env(safe-area-inset-bottom,0px))}
+footer .wrap{display:grid;gap:16px}
+footer h3{color:#fff;font-size:24px}
+footer a.mail{font-family:var(--f-head);font-size:19px;color:var(--gold);text-decoration:none;word-break:break-all}
+footer small{font-size:13px;color:rgba(255,255,255,.45)}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(8,12,28,.94);display:grid;place-items:center;padding:calc(20px + env(safe-area-inset-top,0px)) 14px calc(20px + env(safe-area-inset-bottom,0px))}
+.lb[hidden]{display:none}
+.lb img{max-height:82vh;width:auto;max-width:100%;border-radius:8px}
+.lb p{color:rgba(255,255,255,.8);font-family:var(--f-head);font-size:14px;margin-top:10px;text-align:center}
+.lb button{position:absolute;top:calc(10px + env(safe-area-inset-top,0px));right:12px;width:46px;height:46px;border-radius:50%;border:0;background:rgba(255,255,255,.14);color:#fff;font-size:24px;cursor:pointer}
+
+/* reveal (only when JS adds .js) */
+.js .rv{opacity:0;translate:0 26px;transition:opacity .7s ease,translate .7s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;translate:0 0}
+
+/* ---------- tablet ---------- */
+@media (min-width:768px){
+  :root{--gut:max(32px,env(safe-area-inset-left,0px));--gut-r:max(32px,env(safe-area-inset-right,0px))}
+  .hero .wrap{grid-template-columns:1.15fr .85fr;align-items:center;padding-top:60px;padding-bottom:80px;gap:40px}
+  .stage3d{width:100%;max-width:340px}
+  .stats{grid-template-columns:repeat(4,1fr)}
+  .rail > *{width:46%}
+  .facts{grid-template-columns:repeat(4,1fr)}
+  .sysgrid{grid-template-columns:repeat(2,1fr);gap:28px 24px}
+  .two{grid-template-columns:1fr 1fr;align-items:start;gap:36px}
+  .lead{grid-template-columns:1fr 1fr}
+  .plan .grid{grid-template-columns:1fr 1fr}
+  .edu{grid-template-columns:repeat(4,1fr)}
+  section.sec{padding:80px 0}
+  .badge{width:96px;height:96px}.badge b{font-size:23px}.badge span{font-size:10.5px}.bd1{right:-30px}.bd2{right:-38px}.bd3{right:-26px}
+}
+/* ---------- desktop ---------- */
+@media (min-width:1100px){
+  .hero .wrap{padding-top:80px;padding-bottom:100px}
+  .stage3d{max-width:380px}
+  .feature{grid-template-columns:1.25fr .75fr;gap:40px}
+  .sysgrid{grid-template-columns:repeat(3,1fr)}
+  .rail > *{width:31.5%}
+  .pj.main{display:grid;grid-template-columns:1fr 1fr}
+  .pj.main .shots{grid-column:1/-1}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .card3d{animation:none}
+  .js .rv{opacity:1;translate:none;transition:none}
+  .tilt,.card3d{transition:none}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-teach" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20l4-4 4 4M7 9h6M7 12h9"/></symbol>
+  <symbol id="i-build" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 5l-3 14"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3M9 21h6"/></symbol>
+  <symbol id="i-lab" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L4.5 18.5A1.7 1.7 0 006 21h12a1.7 1.7 0 001.5-2.5L14 9V3M7.5 14h9"/></symbol>
+</svg>
+
+<nav class="nav" aria-label="เมนูหลัก">
+  <div class="wrap">
+    <a class="logo" href="#top"><i></i>JDKS</a>
+    <div class="menu">
+      <a href="#research">วิจัย</a><a href="#systems">ระบบ</a><a href="#teach">สอน</a><a href="#share">วิทยากร</a><a href="#photo">ภาพถ่าย</a><a href="#contact">ติดต่อ</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <canvas id="bg3d" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div>
+      <div class="chips"><span class="chip gold">ครูคอมพิวเตอร์</span><span class="chip">ผู้ช่วยนักวิจัย</span><span class="chip">ผู้พัฒนาระบบการศึกษา</span></div>
+      <h1>นายจเด็ด<br>เครือแสง</h1>
+      <div class="en">JADED KRUEASAENG · ครูเด็ด</div>
+      <p class="tag"><span class="a">สอนได้</span> · <span class="b">สร้างระบบได้</span> · <span class="c">ถ่ายทอดได้</span></p>
+      <p class="intro">ครุศาสตรบัณฑิต คอมพิวเตอร์ศึกษา เกียรตินิยมอันดับ 1 ปี 2569 ทำงานเป็นผู้ช่วยนักวิจัยโครงการ AI เพื่อการเรียนรู้ และพัฒนาระบบที่ครูและนักศึกษาครูหลายพันคนใช้งานจริง</p>
+      <div class="cta"><a class="btn pri" href="#research">ดูงานวิจัยและระบบ</a><a class="btn sec" href="#contact">ติดต่อ</a></div>
+    </div>
+    <div class="stage3d">
+      <div class="card3d" id="heroCard">
+        <div class="frame"></div>
+        <img src="assets/hero.jpg" width="932" height="1400" alt="ภาพนายจเด็ด เครือแสง ในชุดสูท" fetchpriority="high">
+        <div class="badge bd1"><b>2,600</b><span>ผู้ใช้ระบบ<br>TIMS</span></div>
+        <div class="badge bd2"><b>150</b><span>ครูร่วม<br>โครงการวิจัย</span></div>
+        <div class="badge bd3"><b>3.71</b><span>เกียรตินิยม<br>อันดับ 1</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="year">
+  <div class="wrap">
+    <h2>ปี 2569 ในตัวเลข</h2>
+    <div class="stats">
+      <div class="stat"><b data-count="3">3</b><span>โครงการวิจัยที่ร่วมงาน</span></div>
+      <div class="stat"><b data-count="8">8</b><span>ระบบและเครื่องมือที่พัฒนา</span></div>
+      <div class="stat"><b data-count="2600" data-prefix="~">~2,600</b><span>นักศึกษาครูใช้ TIMS</span></div>
+      <div class="stat"><b data-count="272">272</b><span>ผู้เข้าอบรมครั้งใหญ่สุด</span></div>
+    </div>
+  </div>
+</div>
+
+<main>
+<!-- ================= 01 RESEARCH ================= -->
+<section class="sec" id="research">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker"><svg class="ic" style="width:16px;height:16px"><use href="#i-lab"/></svg>ไฮไลต์ปี 2569</span>
+      <h2>ผู้ช่วยนักวิจัย</h2>
+      <p>ทำงานในทีมวิจัยของคณะครุศาสตร์และการพัฒนามนุษย์ มรภ.ศรีสะเกษ 3 โครงการ บทบาทหลักคือทำให้งานวิจัยใช้งานได้จริงผ่านระบบ ข้อมูล และสื่อ</p>
+    </div>
+
+    <div class="proj">
+      <article class="pj main rv">
+        <div>
+          <div class="top">
+            <span class="role">ผู้ช่วยนักวิจัย · พ.ค. 2569–ปัจจุบัน</span>
+            <h3>KapiBarian: แพลตฟอร์ม AI ส่งเสริมการอ่านและการคิดอย่างมีวิจารณญาณ</h3>
+            <p class="meta">นักเรียน ม.ต้น จ.ศรีสะเกษ · ทุน ววน. ผ่านมูลนิธิโรงเรียนวันเสาร์</p>
+          </div>
+          <div class="body">
+            <div class="facts">
+              <div><b>150</b><span>ครูร่วมโครงการ</span></div>
+              <div><b>7</b><span>โรงเรียนที่นิเทศติดตาม ก.ย. 69</span></div>
+              <div><b>2</b><span>การอบรมครู Gen AI ที่ร่วมทีม ก.ค.–ส.ค. 69</span></div>
+              <div><b>1</b><span>ระบบเกียรติบัตรออนไลน์</span></div>
+            </div>
+            <ul class="did">
+              <li>ออกแบบและดูแลระบบเกียรติบัตรออนไลน์ kapicert.itedhd-sskru.com มีระบบคำร้องและ QR ตรวจสอบ</li>
+              <li>ร่วมลงพื้นที่นิเทศติดตามการใช้แพลตฟอร์มในห้องเรียน 7 โรงเรียน</li>
+              <li>บันทึกภาพและวิดีโอการอบรมครู และผลิตสื่อของโครงการ</li>
+            </ul>
+            <div class="tags"><span>AI ในห้องเรียน</span><span>Reading Literacy</span><span>PHP · MySQL</span><span>ภาพและวิดีโอ</span></div>
+          </div>
+        </div>
+        <div class="shots">
+          <div class="rail" data-gallery>
+            <figure><img src="assets/kapi-1.jpg" width="1400" height="933" alt="ครูใช้แพลตฟอร์ม KapiBarian สอนในห้องเรียน" loading="lazy"><figcaption>ครูจัดกิจกรรมในห้องเรียน · นิเทศติดตาม ก.ย. 69</figcaption></figure>
+            <figure><img src="assets/kapi-2.jpg" width="1400" height="933" alt="นักเรียนนำเสนองาน" loading="lazy"><figcaption>นักเรียนนำเสนอหน้าชั้นเรียน</figcaption></figure>
+            <figure><img src="assets/kapi-3.jpg" width="1400" height="933" alt="แพลตฟอร์มบนแท็บเล็ต" loading="lazy"><figcaption>แพลตฟอร์ม KapiBarian บนแท็บเล็ต</figcaption></figure>
+            <figure><img src="assets/kapi-4.jpg" width="1400" height="933" alt="นักเรียนทำกิจกรรมในห้องเรียน" loading="lazy"><figcaption>บรรยากาศการเรียนรู้ของนักเรียน ม.ต้น</figcaption></figure>
+            <figure><img src="assets/kapi-5.jpg" width="1400" height="933" alt="หน้าจอแพลตฟอร์ม" loading="lazy"><figcaption>หน้าจอแพลตฟอร์มที่ใช้ในชั้นเรียน</figcaption></figure>
+          </div>
+        </div>
+      </article>
+
+      <article class="pj rv">
+        <div class="top">
+          <span class="role">ผู้ออกแบบและพัฒนาระบบ · ทุน FF มรภ.ศรีสะเกษ</span>
+          <h3>EDHD PTRU Model: พัฒนาครูมืออาชีพตามฐานสมรรถนะ</h3>
+          <p class="meta">โรงเรียนพื้นที่นวัตกรรมการศึกษา จ.ศรีสะเกษ · โครงการ 3 ปี</p>
+        </div>
+        <div class="body">
+          <div class="facts">
+            <div><b>17</b><span>สมรรถนะครู</span></div>
+            <div><b>18</b><span>บทเรียนออนไลน์</span></div>
+            <div><b>3</b><span>ระดับแดชบอร์ด</span></div>
+            <div><b>11</b><span>แผนภาพระบบส่งทีมวิจัย</span></div>
+          </div>
+          <p>ระบบประเมินสมรรถนะ แผนพัฒนารายบุคคล (ID Plan) PLC และแดชบอร์ดผู้บริหาร เป็นผลผลิตตามวัตถุประสงค์ข้อ 3 ของงานวิจัย</p>
+          <div class="tags"><span>Laravel 12 API</span><span>SPA</span><span>DFD · ER · Use case</span></div>
+        </div>
+        <div class="shots">
+          <div class="rail" data-gallery>
+            <figure class="win"><div class="bar"><i></i><i></i><i></i><span>PTRU Model · หน้าหลัก</span></div><img src="assets/ptru-home.jpg" width="1400" height="875" alt="หน้าหลักระบบ PTRU Model" loading="lazy"></figure>
+            <figure class="win"><div class="bar"><i></i><i></i><i></i><span>ประเมินสมรรถนะ</span></div><img src="assets/ptru-assess.jpg" width="1400" height="875" alt="หน้าประเมินสมรรถนะ" loading="lazy"></figure>
+            <figure class="win"><div class="bar"><i></i><i></i><i></i><span>ID Plan</span></div><img src="assets/ptru-idplan.jpg" width="1400" height="875" alt="แผนพัฒนารายบุคคล" loading="lazy"></figure>
+            <figure class="win"><div class="bar"><i></i><i></i><i></i><span>แดชบอร์ดผู้บริหาร</span></div><img src="assets/ptru-exec.jpg" width="1400" height="875" alt="แดชบอร์ดผู้บริหาร" loading="lazy"></figure>
+            <figure class="win"><div class="bar"><i></i><i></i><i></i><span>มุมมองมือถือ</span></div><img src="assets/ptru-mobile.jpg" width="1400" height="1036" alt="ระบบบนมือถือ" loading="lazy"></figure>
+          </div>
+        </div>
+      </article>
+
+      <article class="pj rv">
+        <div class="top">
+          <span class="role">ผู้ออกแบบและพัฒนาระบบ · ทุน สกสว.</span>
+          <h3>IT-CIL: ระบบสารสนเทศอัจฉริยะพัฒนาครูนวัตกร</h3>
+          <p class="meta">ครูสังกัด สพป.ศรีสะเกษ · การเรียนรู้แบบมีส่วนร่วมกับชุมชน</p>
+        </div>
+        <div class="body">
+          <div class="facts">
+            <div><b>v1.3.2</b><span>เวอร์ชันล่าสุด ส.ค. 69</span></div>
+            <div><b>971</b><span>ชุดทดสอบอัตโนมัติ</span></div>
+            <div><b>50</b><span>ผู้ใช้พร้อมกัน</span></div>
+            <div><b>18×</b><span>คลิกจาก Google ใน 28 วัน</span></div>
+          </div>
+          <p>อีเลิร์นนิ่งสำหรับครูพร้อมบทเรียนชุมชน "รู้จักปัญญาประดิษฐ์" ที่ผมสร้างเอง ระบบจดลิขสิทธิ์ในนามคณะนักวิจัย</p>
+          <p class="links"><a href="https://it-cil.com" target="_blank" rel="noopener">เปิด it-cil.com</a></p>
+        </div>
+        <div class="shots"><figure class="win" style="margin:0"><div class="bar"><i></i><i></i><i></i><span>it-cil.com</span></div><img src="assets/itcil.jpg" width="1400" height="875" alt="หน้าหลัก IT-CIL" loading="lazy"></figure></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 02 SYSTEMS ================= -->
+<section class="sec alt" id="systems">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="num t-build"><svg class="ic"><use href="#i-build"/></svg>สร้าง · ระบบที่พัฒนาในปี 2569</span>
+      <h2>ระบบที่ใช้งานจริง</h2>
+      <p>ออกแบบเองตั้งแต่วิเคราะห์ระบบ หน้าจอ ไปจนถึงเขียนโค้ด ทดสอบ ขึ้นระบบ และอบรมผู้ใช้</p>
+    </div>
+
+    <div class="feature">
+      <div class="persp rv"><div class="tilt stack" data-tilt>
+        <div class="win back"><div class="bar"><i></i><i></i><i></i><span>tims prototype</span></div><img src="assets/sys-timsproto.jpg" width="1400" height="875" alt="ต้นแบบ TIMS" loading="lazy"></div>
+        <div class="win front"><div class="bar"><i></i><i></i><i></i><span>tims.sskru.ac.th</span></div><img src="assets/tims.jpg" width="1400" height="875" alt="หน้าหลักระบบ TIMS" loading="lazy"></div>
+      </div></div>
+      <div class="rv" style="display:grid;gap:14px">
+        <h3 style="font-size:clamp(24px,6vw,32px)">TIMS <span style="font-size:14px;font-family:var(--f-head);color:#fff;background:var(--build);border-radius:99px;padding:2px 10px;vertical-align:middle">ใช้จริง 2/2569</span></h3>
+        <p style="color:var(--ink-2)">ระบบบริหารจัดการการฝึกประสบการณ์วิชาชีพครู คณะครุศาสตร์ฯ มรภ.ศรีสะเกษ รองรับ 4 บทบาทผู้ใช้ มีเว็บไซต์แสดงเครดิต "ผู้พัฒนาและดูแลระบบ: นายจเด็ด เครือแสง"</p>
+        <div class="kpis">
+          <div><b data-count="2600" data-prefix="~">~2,600</b><span>นักศึกษาครู 12 สาขา</span></div>
+          <div><b data-count="658">658</b><span>สถานศึกษาเครือข่าย</span></div>
+          <div><b>5 เล่ม</b><span>คู่มือ 309 หน้า</span></div>
+          <div><b>v1.6.4</b><span>Laravel 12 · MySQL</span></div>
+        </div>
+        <p class="links"><a href="https://www.tims.sskru.ac.th" target="_blank" rel="noopener">เปิด tims.sskru.ac.th</a></p>
+      </div>
+    </div>
+
+    <div class="sysgrid">
+      <div class="sys rv persp"><div class="win tilt" data-tilt><div class="bar"><i></i><i></i><i></i><span>itedhd-sskru.com</span></div><img src="assets/sys-itedhd.jpg" width="1400" height="875" alt="เว็บไซต์คณะครุศาสตร์" loading="lazy"></div>
+        <h4>เว็บไซต์คณะครุศาสตร์ฯ</h4><p>เว็บไซต์ทางการของคณะ พัฒนาในทีม IT EDHD SSKRU</p></div>
+      <div class="sys rv persp"><div class="win tilt" data-tilt><div class="bar"><i></i><i></i><i></i><span>jdksx.github.io/DigitalS</span></div><img src="assets/sys-arena.jpg" width="1400" height="875" alt="JDKS ARENA" loading="lazy"></div>
+        <h4>JDKS ARENA <small>ใช้กับ ~120 คน</small></h4><p>เกมตอบคำถามสดในห้องเรียน ใช้ในเวิร์กช็อป Digital Survival ส.ค. 69</p><a class="go" href="https://jdksx.github.io/DigitalS/" target="_blank" rel="noopener">ลองใช้ →</a></div>
+      <div class="sys rv persp"><div class="win tilt" data-tilt><div class="bar"><i></i><i></i><i></i><span>jdksx.github.io/qr-studio</span></div><img src="assets/sys-qr.jpg" width="1400" height="875" alt="JDKS QR Studio" loading="lazy"></div>
+        <h4>JDKS QR Studio</h4><p>เครื่องมือสร้าง QR Code สำหรับครู ใช้งานฟรีบนเว็บ</p><a class="go" href="https://jdksx.github.io/qr-studio/" target="_blank" rel="noopener">ลองใช้ →</a></div>
+      <div class="sys rv persp"><div class="win tilt" data-tilt><div class="bar"><i></i><i></i><i></i><span>jdksx.github.io/prompt</span></div><img src="assets/sys-prompt.jpg" width="1400" height="875" alt="กระดานร่างพรอมต์" loading="lazy"></div>
+        <h4>กระดานร่างพรอมต์ AI</h4><p>ช่วยครูเขียนพรอมต์อย่างเป็นขั้นตอน ใช้ในอบรมครูพันธุ์ใหม่ 272 คน</p><a class="go" href="https://jdksx.github.io/prompt/" target="_blank" rel="noopener">ลองใช้ →</a></div>
+      <div class="sys rv persp"><div class="win tilt" data-tilt><div class="bar"><i></i><i></i><i></i><span>classroom-random-picker</span></div><img src="assets/sys-picker.jpg" width="1400" height="875" alt="ระบบสุ่มนักเรียน" loading="lazy"></div>
+        <h4>ระบบสุ่มเลขที่และจัดกลุ่ม</h4><p>เครื่องมือหน้าชั้นเรียน สุ่มผู้ตอบและแบ่งกลุ่มอย่างยุติธรรม</p><a class="go" href="https://jdksx.github.io/classroom-random-picker/" target="_blank" rel="noopener">ลองใช้ →</a></div>
+      <div class="sys rv"><div class="callout" style="background:var(--build)"><b style="color:#fff">KapiCert</b><span style="color:rgba(255,255,255,.88)">ระบบเกียรติบัตรออนไลน์โครงการ KapiBarian v1.1.1 ค้นหา ดาวน์โหลด ยื่นคำร้องแก้ไข และตรวจสอบด้วย QR</span></div>
+        <h4>ระบบเกียรติบัตรอัตโนมัติ</h4><p>ออกเกียรติบัตรไปแล้วกว่า 1,400 ใบ ทั้งงานคณะและโรงเรียน ส่งทางอีเมลอัตโนมัติ</p></div>
+    </div>
+
+    <div class="stackbar rv"><span class="label">เทคโนโลยี</span><span>PHP / Laravel 12</span><span>MySQL</span><span>JavaScript / TypeScript</span><span>Firebase</span><span>Google Apps Script</span><span>Python</span><span>Three.js</span><span>GitHub Pages</span><span>cPanel</span></div>
+  </div>
+</section>
+
+<!-- ================= 03 TEACH ================= -->
+<section class="sec" id="teach">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="num t-teach"><svg class="ic"><use href="#i-teach"/></svg>สอน · ร.ร.หวายคำวิทยา อบจ.ศรีสะเกษ</span>
+      <h2>ฝึกสอนเต็มปีการศึกษา 2568</h2>
+      <p>สอนวิชาคอมพิวเตอร์ ม.1–ม.6 สัปดาห์ละ 8 ชั่วโมง เป็นครูประจำชั้น และรับผิดชอบโครงการของโรงเรียน</p>
+    </div>
+    <div class="two">
+      <div class="rv" style="display:grid;gap:22px">
+        <div class="rows">
+          <div class="row"><span class="k t-teach">1/2568</span><span>การออกแบบและเทคโนโลยี ม.2–ม.4 · คอมพิวเตอร์ ม.4 · วิทยาการคำนวณ ม.6</span></div>
+          <div class="row"><span class="k t-teach">2/2568</span><span>วิทยาการคำนวณ ม.1–ม.4 · คอมพิวเตอร์ ม.6</span></div>
+          <div class="row"><span class="k t-teach">หน้าที่</span><span>ครูประจำชั้น ม.3/2 · ชุมนุมคอมพิวเตอร์ · PLC · ค่ายวิชาการ</span></div>
+          <div class="row"><span class="k t-teach">2567</span><span>ทดลองสอน 10 วัน ร.ร.บ้านกอย (ประถม)</span></div>
+        </div>
+        <div class="callout"><b>4.75 / 5</b><span>ความพึงพอใจโครงการ ROV School Championship 2026 ที่ผมเป็นผู้รับผิดชอบ ผู้ร่วม 121 คน และ 100% อยากให้จัดต่อ</span></div>
+      </div>
+      <div class="prints rv" data-gallery>
+        <figure class="print"><img src="assets/class.jpg" width="1400" height="932" alt="ภาพกับนักเรียน" loading="lazy"><figcaption>กับนักเรียน ร.ร.หวายคำวิทยา</figcaption></figure>
+        <figure class="print"><span class="tape"></span><img src="assets/school.jpg" width="1400" height="932" alt="นักเรียนหน้าป้ายโรงเรียน" loading="lazy"><figcaption>หน้าป้ายโรงเรียน</figcaption></figure>
+        <figure class="print"><img src="assets/rov-open.jpg" width="1400" height="932" alt="เปิดการแข่งขัน ROV" loading="lazy"><figcaption>เปิดการแข่งขัน ROV</figcaption></figure>
+        <figure class="print"><img src="assets/rov-room.jpg" width="1400" height="1050" alt="ห้องแข่งขัน ROV" loading="lazy"><figcaption>บรรยากาศห้องแข่งขัน ROV</figcaption></figure>
+        <figure class="print"><img src="assets/lab.jpg" width="1400" height="932" alt="ห้องเรียนคอมพิวเตอร์" loading="lazy"><figcaption>ห้องเรียนคอมพิวเตอร์</figcaption></figure>
+        <figure class="print"><span class="tape"></span><img src="assets/farewell.jpg" width="1400" height="932" alt="กล่าวคำอำลานักเรียน" loading="lazy"><figcaption>กล่าวคำอำลานักเรียน</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 04 SHARE ================= -->
+<section class="sec alt" id="share">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="num t-share"><svg class="ic"><use href="#i-share"/></svg>ถ่ายทอด · วิทยากร</span>
+      <h2>สอนเทคโนโลยีให้ทั้งนักเรียน ครู และชุมชน</h2>
+    </div>
+    <div class="two">
+      <div class="rows rv">
+        <div class="row"><span class="k t-share">ส.ค. 69</span><span><b>UPSKILL พลเมืองดิจิทัล</b> และผลิตสื่อภูมิปัญญาท้องถิ่น · ร.ร.บ้านกันทรารมย์ ~120 คน</span></div>
+        <div class="row"><span class="k t-share">ส.ค. 69</span><span><b>ครูพันธุ์ใหม่</b> เสริมทักษะดิจิทัลเพื่อการศึกษา · นักศึกษาครู ~272 คน</span></div>
+        <div class="row"><span class="k t-share">มิ.ย. 69</span><span><b>AI พละ(กำลัง)ครู</b> สาขาพลศึกษา มรภ.ศรีสะเกษ</span></div>
+        <div class="row"><span class="k t-share">พ.ค. 69</span><span><b>กลยุทธ์การตลาดออนไลน์</b> อบรมชุมชน อบต.อีเซ</span></div>
+        <div class="row"><span class="k t-share">ก.ย. 68</span><span><b>Generative AI สำหรับนักเรียน</b> ม.1–ม.6 ความพึงพอใจ 4.32/5</span></div>
+        <div class="row"><span class="k t-share">2565–66</span><span>ค่ายวิทยาศาสตร์และเทคโนโลยี · วิทยาการคำนวณแบบไม่ใช้คอมพิวเตอร์</span></div>
+      </div>
+      <div class="prints rv" data-gallery>
+        <figure class="print"><img src="assets/stage.jpg" width="1400" height="1050" alt="บรรยายบนเวที" loading="lazy"><figcaption>AI พละ(กำลัง)ครู</figcaption></figure>
+        <figure class="print"><span class="tape"></span><img src="assets/pe-group.jpg" width="1400" height="787" alt="ภาพหมู่กับผู้เข้าอบรม" loading="lazy"><figcaption>กับผู้เข้าอบรม สาขาพลศึกษา</figcaption></figure>
+        <figure class="print"><img src="assets/community.jpg" width="1400" height="932" alt="อบรมชุมชน" loading="lazy"><figcaption>อบรมชุมชน อบต.อีเซ</figcaption></figure>
+        <figure class="print"><img src="assets/pe-award.jpg" width="1400" height="787" alt="รับของที่ระลึก" loading="lazy"><figcaption>รับของที่ระลึกวิทยากร</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LEAD + EDU ================= -->
+<section class="sec" id="lead">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="label" style="color:var(--mute)">ภาวะผู้นำและการศึกษา</span><h2>พื้นฐานที่มั่นคง</h2></div>
+    <div class="edu rv">
+      <div><b>3.71</b><span>ค.บ. คอมพิวเตอร์ศึกษา (5 ปี) เกียรตินิยมอันดับ 1 มรภ.ศรีสะเกษ</span></div>
+      <div><b>ถึง 2574</b><span>ใบอนุญาตประกอบวิชาชีพครู ผ่านการทดสอบสมรรถนะคุรุสภา</span></div>
+      <div><b>2 สมัย</b><span>ผู้นำนักศึกษาดีเด่น คณะครุศาสตร์ฯ 2564 และ 2566</span></div>
+      <div><b>1,400+</b><span>เกียรติบัตรที่ออกแบบและออกด้วยระบบอัตโนมัติ</span></div>
+    </div>
+    <div class="lead rv" style="margin-top:22px">
+      <div><b>รองนายกสโมสรนักศึกษา</b><span>คณะครุศาสตร์ฯ 2566–67 ฝ่ายอาคารสถานที่ ทำระบบยืม–คืนอุปกรณ์</span></div>
+      <div><b>Core team โครงการ TSQM-A</b><span>โรงเรียนพัฒนาตนเองเชิงพื้นที่ จ.ศรีสะเกษ (กสศ.) ดูแลสื่อและเพจ</span></div>
+      <div><b>ผู้จัดและพิธีกร</b><span>สัมมนาฝึกปฏิบัติการสอนและพิธีไหว้ครู สาขาคอมพิวเตอร์ศึกษา 2567</span></div>
+      <div><b>ทีมผลิตสื่อ AI 20 ตอน</b><span>โครงการ Active Learning สกสว. และ มรภ.ศรีสะเกษ</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PHOTO ================= -->
+<section class="sec alt" id="photo">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="label" style="color:var(--mute)">JDKS Photo</span><h2>ช่างภาพและผู้ผลิตสื่อ</h2><p>ถ่ายภาพและวิดีโอให้คณะ โรงเรียน และโครงการวิจัย ตัวอย่างงานที่ถ่ายและแต่งเอง แตะภาพเพื่อดูเต็มจอ</p></div>
+    <div class="ringwrap" id="ringwrap"><div class="ring" id="ring" data-gallery>
+      <figure><img src="assets/ph-camp.jpg" width="1400" height="932" alt="ค่ายลูกเสือ" loading="lazy"></figure>
+      <figure><img src="assets/ph-event.jpg" width="1400" height="932" alt="กิจกรรมทักษะวิชาการ" loading="lazy"></figure>
+      <figure><img src="assets/ph-candle.jpg" width="1400" height="932" alt="แห่เทียนพรรษา" loading="lazy"></figure>
+      <figure><img src="assets/ph-meeting.jpg" width="1400" height="932" alt="ประชุมผู้ปกครอง" loading="lazy"></figure>
+      <figure><img src="assets/ph-scout.jpg" width="1400" height="932" alt="ค่ายพักแรม" loading="lazy"></figure>
+      <figure><img src="assets/rov-award.jpg" width="1400" height="1050" alt="มอบรางวัล ROV" loading="lazy"></figure>
+      <figure><img src="assets/kapi-4.jpg" width="1400" height="933" alt="นิเทศติดตามโครงการ" loading="lazy"></figure>
+    </div></div>
+    <div class="ringctl"><button type="button" id="ringPrev" aria-label="ภาพก่อนหน้า">‹</button><button type="button" id="ringNext" aria-label="ภาพถัดไป">›</button></div>
+  </div>
+</section>
+
+<!-- ================= PLAN ================= -->
+<section class="sec plan" id="plan">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="label" style="color:var(--gold)">ถ้าได้ร่วมงาน</span><h2>สิ่งที่พร้อมทำให้โรงเรียน</h2><p>นำประสบการณ์ทั้งด้านการสอน งานวิจัย และระบบ มาใช้กับโรงเรียนและนักเรียน</p></div>
+    <div class="grid">
+      <div class="it rv"><span class="n" style="color:var(--teach-l)">01</span><b>เด็กทุกคนได้ลงมือแก้ปัญหา</b><span>แม้อุปกรณ์จำกัด ใช้ Unplugged เกมการศึกษา และการเรียนเป็นคู่</span></div>
+      <div class="it rv"><span class="n" style="color:var(--teach-l)">02</span><b>ใช้ AI อย่างรู้เท่าทัน</b><span>สอนพลเมืองดิจิทัล ความปลอดภัย และจริยธรรมออนไลน์ จากประสบการณ์โครงการ KapiBarian</span></div>
+      <div class="it rv"><span class="n" style="color:var(--build-l)">03</span><b>งานไอทีของโรงเรียน</b><span>ระบบข้อมูลนักเรียน เว็บไซต์ เกียรติบัตรออนไลน์ และสื่อประชาสัมพันธ์</span></div>
+      <div class="it rv"><span class="n" style="color:var(--share-l)">04</span><b>อบรมเพื่อนครูและชุมชน</b><span>ใช้สื่อดิจิทัลเล่าเรื่องภูมิปัญญาท้องถิ่น</span></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <h3>ติดต่อ</h3>
+    <a class="mail" href="mailto:20jaded02@gmail.com">20jaded02@gmail.com</a>
+    <p>GitHub: <a href="https://github.com/JDKSX" target="_blank" rel="noopener" style="color:#fff">github.com/JDKSX</a></p>
+    <small>เว็บไซต์นี้ออกแบบและเขียนเองด้วย HTML, CSS, JavaScript และ Three.js · ภาพถ่ายโดย JDKS Photo · ปรับปรุงล่าสุด ต.ค. 2569</small>
+  </div>
+</footer>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="ดูภาพขนาดใหญ่"><button type="button" id="lbClose" aria-label="ปิด">×</button><div><img id="lbImg" alt=""><p id="lbCap"></p></div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+<script>
+document.documentElement.classList.add('js');
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const fine = matchMedia('(hover:hover) and (pointer:fine)').matches;
+
+/* reveal + counters */
+const io = new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+const fmt=n=>n.toLocaleString('en-US');
+const co = new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting) return; co.unobserve(e.target);
+  const el=e.target,end=+el.dataset.count,pre=el.dataset.prefix||''; if(reduce) return;
+  const t0=performance.now(),d=1300;
+  (function step(t){const p=Math.min(1,(t-t0)/d),v=Math.round(end*(1-Math.pow(1-p,3)));el.textContent=pre+fmt(v);if(p<1)requestAnimationFrame(step)})(t0);
+}),{threshold:.6});
+document.querySelectorAll('[data-count]').forEach(el=>co.observe(el));
+
+/* active menu */
+const links=[...document.querySelectorAll('.menu a')];
+const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}}),{rootMargin:'-45% 0px -50% 0px'});
+document.querySelectorAll('main section[id],footer').forEach(s=>so.observe(s));
+
+/* 3D tilt: pointer on desktop, scroll-driven on touch */
+const tilts=[...document.querySelectorAll('[data-tilt]')];
+if(!reduce){
+  if(fine){
+    tilts.forEach(el=>{
+      el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;el.style.transform=`rotateY(${x*14}deg) rotateX(${-y*10}deg)`});
+      el.addEventListener('pointerleave',()=>el.style.transform='');
+    });
+    const hc=document.getElementById('heroCard');
+    document.querySelector('.hero').addEventListener('pointermove',e=>{const x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;hc.style.transform=`rotateY(${x*18}deg) rotateX(${-y*12}deg)`});
+  }else{
+    let tick=false;
+    const upd=()=>{tick=false;const h=innerHeight;tilts.forEach(el=>{const r=el.getBoundingClientRect();if(r.bottom<0||r.top>h)return;const p=((r.top+r.height/2)/h-.5);el.style.transform=`rotateX(${p*16}deg) rotateY(${-p*10}deg)`});
+      const hc=document.getElementById('heroCard');const s=Math.min(1,scrollY/500);hc.style.transform=`rotateY(${-12+12*s}deg) rotateX(${6-6*s}deg)`};
+    addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});upd();
+  }
+}
+
+/* 3D ring gallery */
+(function(){
+  const ring=document.getElementById('ring'),wrap=document.getElementById('ringwrap'),items=[...ring.children],n=items.length;
+  let ang=0,auto=!reduce,drag=null;
+  function radius(){return Math.round(ring.offsetWidth/2/Math.tan(Math.PI/n))+18}
+  function lay(){const R=radius();items.forEach((f,i)=>f.style.transform=`rotateY(${i*360/n}deg) translateZ(${R}px)`);ring.style.transform=`translateZ(${-R}px) rotateY(${ang}deg)`}
+  function set(a){ang=a;ring.style.transform=`translateZ(${-radius()}px) rotateY(${ang}deg)`}
+  lay();addEventListener('resize',lay);
+  document.getElementById('ringPrev').onclick=()=>{auto=false;ring.style.transition='transform .6s';set(Math.round((ang+360/n)/(360/n))*(360/n))};
+  document.getElementById('ringNext').onclick=()=>{auto=false;ring.style.transition='transform .6s';set(Math.round((ang-360/n)/(360/n))*(360/n))};
+  wrap.addEventListener('pointerdown',e=>{drag={x:e.clientX,a:ang,moved:false};auto=false;ring.style.transition='none'});
+  addEventListener('pointermove',e=>{if(!drag)return;const dx=e.clientX-drag.x;if(Math.abs(dx)>6)drag.moved=true;set(drag.a+dx*.35)});
+  addEventListener('pointerup',()=>{if(drag){ring.style.transition='transform .5s';set(Math.round(ang/(360/n))*(360/n));setTimeout(()=>{drag=null},0)}});
+  wrap.addEventListener('click',e=>{if(drag&&drag.moved){e.stopPropagation();e.preventDefault()}},true);
+  let vis=false;new IntersectionObserver(es=>vis=es[0].isIntersecting).observe(wrap);
+  (function spin(){if(auto&&vis&&!document.hidden){ring.style.transition='none';set(ang-.12)}requestAnimationFrame(spin)})();
+})();
+
+/* lightbox */
+const lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg'),lbCap=document.getElementById('lbCap');
+document.querySelectorAll('[data-gallery] img, .win img').forEach(img=>img.addEventListener('click',()=>{
+  const cap=img.closest('figure')?.querySelector('figcaption')?.textContent||img.alt;
+  lbImg.src=img.currentSrc||img.src;lbImg.alt=img.alt;lbCap.textContent=cap;lb.hidden=false;document.body.style.overflow='hidden';
+}));
+function closeLb(){lb.hidden=true;document.body.style.overflow=''}
+document.getElementById('lbClose').onclick=closeLb;lb.addEventListener('click',e=>{if(e.target===lb)closeLb()});addEventListener('keydown',e=>{if(e.key==='Escape'&&!lb.hidden)closeLb()});
+
+/* Three.js hero: เครือข่ายจุดเชื่อมโยง 3 สี + ทรงเรขาคณิตโครงลวด หมุนช้า ๆ (เบาลงบนมือถือ) */
+addEventListener('load',()=>{
+  if(!window.THREE) return;
+  const cv=document.getElementById('bg3d'),hero=document.querySelector('.hero');
+  const small=innerWidth<768;
+  const renderer=new THREE.WebGLRenderer({canvas:cv,antialias:!small,alpha:true});
+  renderer.setPixelRatio(Math.min(devicePixelRatio,small?1.5:2));
+  const scene=new THREE.Scene(),cam=new THREE.PerspectiveCamera(55,1,.1,100);cam.position.z=14;
+  const N=small?70:140,pos=new Float32Array(N*3),col=new Float32Array(N*3),vel=[];
+  const palette=[new THREE.Color('#8DB0FF'),new THREE.Color('#5FE0C8'),new THREE.Color('#FFB370'),new THREE.Color('#F5C04E')];
+  for(let i=0;i<N;i++){pos[i*3]=(Math.random()-.5)*26;pos[i*3+1]=(Math.random()-.5)*16;pos[i*3+2]=(Math.random()-.5)*10;const c=palette[i%4];col.set([c.r,c.g,c.b],i*3);vel.push([(Math.random()-.5)*.01,(Math.random()-.5)*.01,(Math.random()-.5)*.006])}
+  const pg=new THREE.BufferGeometry();pg.setAttribute('position',new THREE.BufferAttribute(pos,3));pg.setAttribute('color',new THREE.BufferAttribute(col,3));
+  const pts=new THREE.Points(pg,new THREE.PointsMaterial({size:small?.13:.11,vertexColors:true,transparent:true,opacity:.95}));scene.add(pts);
+  const MAXL=N*6,lp=new Float32Array(MAXL*6),lg=new THREE.BufferGeometry();lg.setAttribute('position',new THREE.BufferAttribute(lp,3));
+  const lines=new THREE.LineSegments(lg,new THREE.LineBasicMaterial({color:0x8DB0FF,transparent:true,opacity:.16}));scene.add(lines);
+  const ico=new THREE.Mesh(new THREE.IcosahedronGeometry(small?3.2:4.2,1),new THREE.MeshBasicMaterial({color:0xF5C04E,wireframe:true,transparent:true,opacity:.22}));
+  ico.position.set(small?3.5:6,small?3.5:1,-3);scene.add(ico);
+  const tor=new THREE.Mesh(new THREE.TorusKnotGeometry(1.6,.35,90,10),new THREE.MeshBasicMaterial({color:0x5FE0C8,wireframe:true,transparent:true,opacity:.14}));
+  tor.position.set(small?-4:-9,small?-5:-3,-4);scene.add(tor);
+  let mx=0,my=0;addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5},{passive:true});
+  function size(){const w=hero.clientWidth,h=hero.clientHeight;renderer.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix()}
+  size();addEventListener('resize',size);
+  let on=true;new IntersectionObserver(es=>on=es[0].isIntersecting).observe(hero);
+  const D2=small?9:7.5;
+  function frame(){
+    requestAnimationFrame(frame);
+    if(!on||document.hidden) return;
+    if(!reduce){for(let i=0;i<N;i++){for(let k=0;k<3;k++){pos[i*3+k]+=vel[i][k];const lim=k===0?13:k===1?8:5;if(Math.abs(pos[i*3+k])>lim)vel[i][k]*=-1}}pg.attributes.position.needsUpdate=true}
+    let c=0;for(let i=0;i<N&&c<MAXL;i++)for(let j=i+1;j<N&&c<MAXL;j++){const dx=pos[i*3]-pos[j*3],dy=pos[i*3+1]-pos[j*3+1],dz=pos[i*3+2]-pos[j*3+2];if(dx*dx+dy*dy+dz*dz<D2){lp.set([pos[i*3],pos[i*3+1],pos[i*3+2],pos[j*3],pos[j*3+1],pos[j*3+2]],c*6);c++}}
+    lg.setDrawRange(0,c*2);lg.attributes.position.needsUpdate=true;
+    if(!reduce){ico.rotation.x+=.0016;ico.rotation.y+=.0024;tor.rotation.x+=.002;tor.rotation.y+=.003}
+    scene.rotation.y+=((mx*.25)-scene.rotation.y)*.04;scene.rotation.x+=((my*.15)-scene.rotation.x)*.04;
+    renderer.render(scene,cam);
+  }
+  frame();
+});
+</script>
+</body>
+</html>
